@@ -133,6 +133,7 @@
     <Content Include="Content\blueimp-gallery-video.css" />
     <Content Include="Content\blueimp-gallery.css" />
     <Content Include="Content\blueimp-gallery.min.css" />
+    <Content Include="Content\Custom.css" />
     <Content Include="Content\img\error.png" />
     <Content Include="Content\img\error.svg" />
     <Content Include="Content\img\loading.gif" />
@@ -172,6 +173,7 @@
     <Content Include="Content\blueimp-gallery.min.css.map" />
     <Content Include="Scripts\blueimp-gallery.min.js.map" />
     <Content Include="Scripts\jquery.blueimp-gallery.min.js.map" />
+    <Content Include="fonts\Azbuka.ttf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

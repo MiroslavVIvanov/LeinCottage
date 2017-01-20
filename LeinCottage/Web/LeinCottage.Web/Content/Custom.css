@@ -1,0 +1,9 @@
+﻿@font-face {
+    font-family: 'Azbuka';
+    src: url('../fonts/Azbuka.ttf') format('truetype');
+}
+
+.azbuka-font-family {
+    font-family: Azbuka;
+    font-size:1.8em;
+}

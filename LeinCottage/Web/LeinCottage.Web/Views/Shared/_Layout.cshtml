@@ -7,11 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@GlobalResources.ApplicationName - @ViewBag.Title</title>
     <link href="~/Content/blueimp-gallery.min.css" rel="stylesheet" />
+    <link href="~/Content/Custom.css" rel="stylesheet" />
 
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body>
+<body class="azbuka-font-family">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -37,7 +38,7 @@
         <footer>
             <p>
                 @GlobalResources.FooterVisit <a href="@GlobalResources.FaceBookLink">
-                    @GlobalResources.FooterFaceBookPageLink
+                    @GlobalResources.FooterFaceBookPageLink!
             </a>
                 <strong>@GlobalResources.BeWellcome</strong>
         </p>
