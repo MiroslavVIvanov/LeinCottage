@@ -120,6 +120,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ContactsController.cs" />
+    <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -127,6 +129,38 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\blueimp-gallery-indicator.css" />
+    <Content Include="Content\blueimp-gallery-video.css" />
+    <Content Include="Content\blueimp-gallery.css" />
+    <Content Include="Content\blueimp-gallery.min.css" />
+    <Content Include="Content\img\error.png" />
+    <Content Include="Content\img\error.svg" />
+    <Content Include="Content\img\loading.gif" />
+    <Content Include="Content\img\play-pause.png" />
+    <Content Include="Content\img\play-pause.svg" />
+    <Content Include="Content\img\video-play.png" />
+    <Content Include="Content\img\video-play.svg" />
+    <Content Include="Scripts\blueimp-gallery-fullscreen.js" />
+    <Content Include="Scripts\blueimp-gallery-indicator.js" />
+    <Content Include="Scripts\blueimp-gallery-video.js" />
+    <Content Include="Scripts\blueimp-gallery-vimeo.js" />
+    <Content Include="Scripts\blueimp-gallery-youtube.js" />
+    <Content Include="Scripts\blueimp-gallery.js" />
+    <Content Include="Scripts\blueimp-gallery.min.js" />
+    <Content Include="Scripts\blueimp-helper.js" />
+    <Content Include="Scripts\jquery.blueimp-gallery.js" />
+    <Content Include="Scripts\jquery.blueimp-gallery.min.js" />
+    <Content Include="BlueImpGalleryControls\photos\img%281%29.jpg" />
+    <Content Include="BlueImpGalleryControls\photos\img%2810%29.jpg" />
+    <Content Include="BlueImpGalleryControls\photos\img%282%29.jpg" />
+    <Content Include="BlueImpGalleryControls\photos\img%283%29.jpg" />
+    <Content Include="BlueImpGalleryControls\photos\img%284%29.jpg" />
+    <Content Include="BlueImpGalleryControls\photos\img%285%29.jpg" />
+    <Content Include="BlueImpGalleryControls\photos\img%286%29.jpg" />
+    <Content Include="BlueImpGalleryControls\photos\img%287%29.jpg" />
+    <Content Include="BlueImpGalleryControls\photos\img%288%29.jpg" />
+    <Content Include="BlueImpGalleryControls\photos\img%289%29.jpg" />
+    <Content Include="BlueImpGalleryControls\photos\mainImage.jpg" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -135,6 +169,9 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\blueimp-gallery.min.css.map" />
+    <Content Include="Scripts\blueimp-gallery.min.js.map" />
+    <Content Include="Scripts\jquery.blueimp-gallery.min.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -158,9 +195,9 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Contacts\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Gallery\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -171,7 +208,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
-    <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <PropertyGroup>
