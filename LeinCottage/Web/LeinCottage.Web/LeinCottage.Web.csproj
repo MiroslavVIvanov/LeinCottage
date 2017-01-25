@@ -120,6 +120,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Common\ImageProcessor.cs" />
+    <Compile Include="Common\PhotoNameProvider.cs" />
     <Compile Include="Controllers\ContactsController.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -216,6 +218,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Data\LeinCottage.Models\LeinCottage.Models.csproj">
+      <Project>{FAB9DF30-D309-4E3B-8C99-24D476030939}</Project>
+      <Name>LeinCottage.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Resources\LeinCottage.Resources\LeinCottage.Resources.csproj">
       <Project>{68151225-1eb8-4913-aa5f-174e2d78caff}</Project>
       <Name>LeinCottage.Resources</Name>
