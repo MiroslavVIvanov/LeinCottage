@@ -9,11 +9,13 @@
     <link href="~/Content/blueimp-gallery.min.css" rel="stylesheet" />
     <link href="~/Content/Custom.css" rel="stylesheet" />
 
+    <script language="JavaScript" type="text/javascript" src="~/Scripts/jquery-1.10.2.min.js"></script>
+
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body class="azbuka-font-family">
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top bold">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -37,10 +39,11 @@
         <hr />
         <footer>
             <p>
-                @GlobalResources.FooterVisit <a href="@GlobalResources.FaceBookLink">
+                @GlobalResources.FooterVisit 
+                <a href="@GlobalResources.FaceBookLink" target="_blank">
                     @GlobalResources.FooterFaceBookPageLink!
             </a>
-                <strong>@GlobalResources.BeWellcome</strong>
+                <span class="bold">@GlobalResources.BeWellcome</span>
         </p>
     </footer>
 </div>
