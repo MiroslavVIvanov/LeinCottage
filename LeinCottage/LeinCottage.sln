@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeinCottage.Web", "Web\Lein
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeinCottage.Resources", "Resources\LeinCottage.Resources\LeinCottage.Resources.csproj", "{68151225-1EB8-4913-AA5F-174E2D78CAFF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeinCottage.Data", "Data\LeinCottage.Data\LeinCottage.Data.csproj", "{DF37CD8F-315A-407F-824A-9F21C4B2CC2B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{68151225-1EB8-4913-AA5F-174E2D78CAFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68151225-1EB8-4913-AA5F-174E2D78CAFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68151225-1EB8-4913-AA5F-174E2D78CAFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF37CD8F-315A-407F-824A-9F21C4B2CC2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF37CD8F-315A-407F-824A-9F21C4B2CC2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF37CD8F-315A-407F-824A-9F21C4B2CC2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF37CD8F-315A-407F-824A-9F21C4B2CC2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
