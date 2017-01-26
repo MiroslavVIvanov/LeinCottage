@@ -22,7 +22,7 @@
             CheckIfDirectoryExist(ThumbsDirectoryName);
 
             var photos = new EfGenericRepository<Photo>(new LeinCottageDbContext());
-            var allPhotos = photos.All();
+            var allPhotos = photos.All().OrderByDescending(p => p.Id);
 
 
             return View(allPhotos);
@@ -68,18 +68,21 @@
         [HttpPost]
         public void Delete(int id)
         {
-            var photos = new EfGenericRepository<Photo>(new LeinCottageDbContext());
-            var path = Path.Combine(Server.MapPath("~"), "GalleryPhotos", photos.GetById(id).Name);
-            var thumbPath = Path.Combine(Server.MapPath("~"), "GalleryThumbnails", photos.GetById(id).Name);
+            try
+            {
+                var photos = new EfGenericRepository<Photo>(new LeinCottageDbContext());
+                var path = Path.Combine(Server.MapPath("~"), "GalleryPhotos", photos.GetById(id).Name);
+                var thumbPath = Path.Combine(Server.MapPath("~"), "GalleryThumbnails", photos.GetById(id).ThumbnailName);
 
                 ImageProcessor.PhysicallyDeletePhoto(path);
                 ImageProcessor.PhysicallyDeletePhoto(thumbPath);
 
-
-            photos.Delete(id);
-            photos.SaveChanges();
-
-            //return RedirectToAction("Index");
+                photos.Delete(id);
+                photos.SaveChanges();
+            }
+            catch (System.Exception)
+            {
+            }
         }
 
         private void CheckIfDirectoryExist(string directoryName)

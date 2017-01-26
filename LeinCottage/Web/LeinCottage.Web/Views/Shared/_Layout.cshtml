@@ -8,8 +8,10 @@
     <title>@GlobalResources.ApplicationName - @ViewBag.Title</title>
     <link href="~/Content/blueimp-gallery.min.css" rel="stylesheet" />
     <link href="~/Content/Custom.css" rel="stylesheet" />
+    <link href="~/Content/toastr.css" rel="stylesheet" />
 
     <script language="JavaScript" type="text/javascript" src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/toastr.min.js"></script>
 
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
@@ -30,6 +32,7 @@
                     <li>@Html.ActionLink(GlobalResources.HomeBtn, "Index", "Home")</li>
                     <li>@Html.ActionLink(GlobalResources.GalleryBtn, "Index", "Gallery")</li>
                     <li>@Html.ActionLink(GlobalResources.ContactsBtn, "Index", "Contacts")</li>
+                    <li>@Html.ActionLink("Admin", "Index", "ImagesAdministration")</li>
                 </ul>
             </div>
         </div>

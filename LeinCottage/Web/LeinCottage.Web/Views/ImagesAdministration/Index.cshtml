@@ -5,45 +5,72 @@
 }
 
 <form action="" method="post" enctype="multipart/form-data" style="border:1px solid black; padding: 15px; margin:5px">
+    <h3 style="font-family:'Azbuka'">Добавяне на снимка</h3>
 
-    <label for="file">Filename:</label>
-    <input type="file" name="file" id="file" accept="image/jpeg" />
+    <input type="button" value="Избери снимка" onclick="document.getElementById('file').click();" />
+    <input type="file" style="display:none;" id="file" name="file" />
 
-    <input type="submit" />
+    <input type="button" value="Добави избраната снимка" onclick="validateFileSelected()" />
+    <input type="submit" style="display:none;" id="submit" onclick="showInfoToast('Добавяне на снимка...')" />
 </form>
 
 <div style="border:1px solid black; padding: 15px; margin:5px">
-    <ul style="list-style-type:none">
+    <h3 style="font-family:'Azbuka'">Изтриване на снимки</h3>
+    <ul style="list-style-type:none; padding:0;">
         @foreach (LeinCottage.Models.Photo photo in Model)
         {
-            <li style="margin:0; padding:0">
-                <img src="~/GalleryThumbnails/@photo.ThumbnailName" class="galery-thumbnail" />
-                <button id="@photo.Id" onclick="deleteImage(@photo.Id)">Delete this image!</button>
+            <li style="margin:2px; padding:1px; display:inline-block;" >
+                <div class="img-holder">
+                    <img src="~/GalleryThumbnails/@photo.ThumbnailName" class="galery-thumbnail" />
+                    <img src="~/Content/img/delete.png" id="@photo.Id" onclick="deleteImage(@photo.Id)" class="link"/>
+                </div>
             </li>
         }
     </ul>
 </div>
 
 <script>
-    @*jQuery(function ($) {
-        $('#my-button').on('click', function () {
-            $.ajax({
-                url : '@Url.Action("Foo", "MyController")',
-                type : 'GET'
-            });
-        });
-    });*@
-
     function deleteImage(imageId) {
-        $.ajax({
-            url: '@Url.Action("Delete", "ImagesAdministration")',
-            type: 'POST',
-            data: { 'id' : imageId },
-            async: false,
-            cache: false,
-            success:function(){
-                window.location = "@Url.Action("Index", "ImagesAdministration")";
+        toastr.options = {
+            "closeButton": true,
+            "positionClass": "toast-top-full-width",
+        }
+        toastr.error("<button type='button' id='confirmationRevertYes' class='btn clear'>Да</button>", 'Сигурни ли сте, че искате да изтриете снимката?',
+          {
+              closeButton: false,
+              allowHtml: true,
+              onShown: function (toast) {
+                  $("#confirmationRevertYes").click(function () {
+                      $.ajax({
+                          url: '@Url.Action("Delete", "ImagesAdministration")',
+                          type: 'POST',
+                          data: { 'id': imageId },
+                          async: false,
+                          cache: false,
+                          success: function () {
+                              window.location = "@Url.Action("Index", "ImagesAdministration")";
+                          }
+                      });
+                  });
+              }
+          });
+    }
+
+    function showInfoToast(msg) {
+        toastr.options = {
+            "positionClass": "toast-top-full-width",
+        }
+        toastr.info(msg).show();
+    }
+
+    function validateFileSelected() {
+        if ($("#file").val()) {
+            document.getElementById('submit').click();
+        } else {
+            toastr.options = {
+                "positionClass": "toast-top-full-width",
             }
-        });
+            toastr.error("Не сте избрали снимка!", "Грешка!")
+        }
     }
 </script>

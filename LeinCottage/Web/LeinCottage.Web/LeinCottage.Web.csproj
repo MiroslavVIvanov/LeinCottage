@@ -147,6 +147,7 @@
     <Content Include="Content\blueimp-gallery.css" />
     <Content Include="Content\blueimp-gallery.min.css" />
     <Content Include="Content\Custom.css" />
+    <Content Include="Content\img\delete.png" />
     <Content Include="Content\img\error.png" />
     <Content Include="Content\img\error.svg" />
     <Content Include="Content\img\loading.gif" />
@@ -154,6 +155,8 @@
     <Content Include="Content\img\play-pause.svg" />
     <Content Include="Content\img\video-play.png" />
     <Content Include="Content\img\video-play.svg" />
+    <Content Include="Content\toastr.css" />
+    <Content Include="Content\toastr.min.css" />
     <Content Include="Scripts\blueimp-gallery-fullscreen.js" />
     <Content Include="Scripts\blueimp-gallery-indicator.js" />
     <Content Include="Scripts\blueimp-gallery-video.js" />
@@ -187,6 +190,8 @@
     <Content Include="Scripts\blueimp-gallery.min.js.map" />
     <Content Include="Scripts\jquery.blueimp-gallery.min.js.map" />
     <Content Include="fonts\Azbuka.ttf" />
+    <Content Include="Content\toastr.scss" />
+    <Content Include="Content\toastr.less" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -198,6 +203,8 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
