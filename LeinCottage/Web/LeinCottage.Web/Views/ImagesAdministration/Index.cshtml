@@ -4,14 +4,14 @@
     ViewBag.Title = "Index";
 }
 
-<form action="" method="post" enctype="multipart/form-data" style="border:1px solid black; padding: 15px; margin:5px">
+<form method="post" enctype="multipart/form-data" style="border:1px solid black; padding: 15px; margin:5px">
     <h3 style="font-family:'Azbuka'">Добавяне на снимка</h3>
 
-    <input type="button" value="Избери снимка" onclick="document.getElementById('file').click();" />
-    <input type="file" style="display:none;" id="file" name="file" />
+    <input type="button" value="Избери снимка/и" onclick="document.getElementById('file').click();" />
+    <input type="file" style="display:none;" id="file" name="uploadedPhotos" multiple/>
 
-    <input type="button" value="Добави избраната снимка" onclick="validateFileSelected()" />
-    <input type="submit" style="display:none;" id="submit" onclick="showInfoToast('Добавяне на снимка...')" />
+    <input type="button" value="Добави избраните снимки" onclick="validateFileSelected()" />
+    <input type="submit" style="display:none;" id="submit" onclick="showInfoToast('Добавяне на снимки...')" />
 </form>
 
 <div style="border:1px solid black; padding: 15px; margin:5px">

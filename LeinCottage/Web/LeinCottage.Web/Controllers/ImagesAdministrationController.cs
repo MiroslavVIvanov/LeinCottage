@@ -1,13 +1,14 @@
 ﻿namespace LeinCottage.Web.Controllers
 {
-    using Common;
-    using CustomAttributes;
-    using Data;
-    using Models;
+    using System.Collections.Generic;
     using System.IO;
     using System.Linq;
     using System.Web;
     using System.Web.Mvc;
+    using Common;
+    using CustomAttributes;
+    using Data;
+    using Models;
 
     [NoCache]
     public class ImagesAdministrationController : Controller
@@ -29,36 +30,45 @@
         }
 
         [HttpPost]
-        public ActionResult Index(HttpPostedFileBase file)
+        public ActionResult Index(IEnumerable<HttpPostedFileBase> uploadedPhotos)
         {
-            if (file.ContentLength > 0)
+            var a = uploadedPhotos;
+            if (uploadedPhotos != null && uploadedPhotos.Count() > 0)
             {
-                //names and paths
-                string rootPath = Server.MapPath("~");
-
-                string originalName = file.FileName;
-
-                string photoName = PhotoNameProvider.GetName(file.FileName);
-                string photoPath = Path.Combine(rootPath, PhotosDirectoryName, photoName);
-
-                string thumbName = PhotoNameProvider.GetThumbnailName(file.FileName);
-                string thumbPath = Path.Combine(rootPath, ThumbsDirectoryName, thumbName);
-
-                //image and resizing
-                ImageProcessor.SavePhoto(file.InputStream, photoPath);
-                ImageProcessor.SavePhotoThumbnail(file.InputStream, thumbPath);
-
-                //photo to database
                 var photos = new EfGenericRepository<Photo>(new LeinCottageDbContext());
-                var newPhoto = new Photo()
-                {
-                    IsVisible = true,
-                    Name = photoName,
-                    ThumbnailName = thumbName,
-                    OriginalName = originalName
-                };
 
-                photos.Add(newPhoto);
+                foreach (var file in uploadedPhotos)
+                {
+                    if (file.ContentLength > 0)
+                    {
+                        //names and paths
+                        string rootPath = Server.MapPath("~");
+
+                        string originalName = file.FileName;
+
+                        string photoName = PhotoNameProvider.GetName(file.FileName);
+                        string photoPath = Path.Combine(rootPath, PhotosDirectoryName, photoName);
+
+                        string thumbName = PhotoNameProvider.GetThumbnailName(file.FileName);
+                        string thumbPath = Path.Combine(rootPath, ThumbsDirectoryName, thumbName);
+
+                        //image and resizing
+                        ImageProcessor.SavePhoto(file.InputStream, photoPath);
+                        ImageProcessor.SavePhotoThumbnail(file.InputStream, thumbPath);
+
+                        //photo to database
+                        var newPhoto = new Photo()
+                        {
+                            IsVisible = true,
+                            Name = photoName,
+                            ThumbnailName = thumbName,
+                            OriginalName = originalName
+                        };
+
+                        photos.Add(newPhoto);
+                    }
+                }
+
                 photos.SaveChanges();
             }
 
