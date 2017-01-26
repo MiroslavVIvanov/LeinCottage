@@ -70,6 +70,15 @@ namespace LeinCottage.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Добави избраните снимки.
+        /// </summary>
+        public static string AddSelectedPhotos {
+            get {
+                return ResourceManager.GetString("AddSelectedPhotos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Lein Cottage.
         /// </summary>
         public static string ApplicationName {
@@ -84,6 +93,15 @@ namespace LeinCottage.Resources {
         public static string BeWellcome {
             get {
                 return ResourceManager.GetString("BeWellcome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Избери снимка/и.
+        /// </summary>
+        public static string ChoosePhotos {
+            get {
+                return ResourceManager.GetString("ChoosePhotos", resourceCulture);
             }
         }
         
@@ -120,6 +138,15 @@ namespace LeinCottage.Resources {
         public static string ContactsBtn {
             get {
                 return ResourceManager.GetString("ContactsBtn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Изтриване на снимки.
+        /// </summary>
+        public static string DeletePhotos {
+            get {
+                return ResourceManager.GetString("DeletePhotos", resourceCulture);
             }
         }
         
@@ -178,6 +205,15 @@ namespace LeinCottage.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Добавяне на снимки....
+        /// </summary>
+        public static string PhotoAdding {
+            get {
+                return ResourceManager.GetString("PhotoAdding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Освобождаване на стаите: до 11.00 ч..
         /// </summary>
         public static string RoomsRelease {
@@ -201,6 +237,15 @@ namespace LeinCottage.Resources {
         public static string ThirdHomePageInfo {
             get {
                 return ResourceManager.GetString("ThirdHomePageInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Добавяне на снимки.
+        /// </summary>
+        public static string UploadPhotos {
+            get {
+                return ResourceManager.GetString("UploadPhotos", resourceCulture);
             }
         }
     }

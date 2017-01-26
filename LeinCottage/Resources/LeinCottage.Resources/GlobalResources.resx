@@ -120,11 +120,17 @@
   <data name="Accomodation" xml:space="preserve">
     <value>Настаняване: след 14.00 ч.</value>
   </data>
+  <data name="AddSelectedPhotos" xml:space="preserve">
+    <value>Добави избраните снимки</value>
+  </data>
   <data name="ApplicationName" xml:space="preserve">
     <value>Lein Cottage</value>
   </data>
   <data name="BeWellcome" xml:space="preserve">
     <value>Заповядайте!</value>
+  </data>
+  <data name="ChoosePhotos" xml:space="preserve">
+    <value>Избери снимка/и</value>
   </data>
   <data name="ContactAddress" xml:space="preserve">
     <value>с. Горно Трапе; общ. Троян; обл. Ловеч.</value>
@@ -137,6 +143,9 @@
   </data>
   <data name="ContactsBtn" xml:space="preserve">
     <value>Контакти</value>
+  </data>
+  <data name="DeletePhotos" xml:space="preserve">
+    <value>Изтриване на снимки</value>
   </data>
   <data name="FaceBookLink" xml:space="preserve">
     <value>https://www.facebook.com/LeinCottageComBG/</value>
@@ -156,6 +165,9 @@
   <data name="HomeBtn" xml:space="preserve">
     <value>Начало</value>
   </data>
+  <data name="PhotoAdding" xml:space="preserve">
+    <value>Добавяне на снимки...</value>
+  </data>
   <data name="RoomsRelease" xml:space="preserve">
     <value>Освобождаване на стаите: до 11.00 ч.</value>
   </data>
@@ -164,5 +176,8 @@
   </data>
   <data name="ThirdHomePageInfo" xml:space="preserve">
     <value>На разположение на гостите е голям двор с открит басейн със шезлонги, детски кът и паркинг. Има волейболно игрище и джага.</value>
+  </data>
+  <data name="UploadPhotos" xml:space="preserve">
+    <value>Добавяне на снимки</value>
   </data>
 </root>

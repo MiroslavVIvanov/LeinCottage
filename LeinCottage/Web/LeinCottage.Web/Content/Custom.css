@@ -64,6 +64,33 @@
         width: 40px;
     }
 
-        .link:hover {
-                transform:rotate(5deg) scale(1.1, 1.1);
-        }
+.link:hover {
+    transform: rotate(5deg) scale(1.1, 1.1);
+}
+
+#form {
+    border: 1px solid black;
+    padding: 15px;
+    margin: 5px;
+}
+
+.display-none {
+    display: none;
+}
+
+#photos-wrapper {
+    border: 1px solid black;
+    padding: 15px;
+    margin: 5px;
+}
+
+.image-for-delition-li {
+    margin: 2px;
+    padding: 1px;
+    display: inline-block;
+}
+
+#list-of-photos-to-delete {
+    list-style-type: none;
+    padding: 0;
+}

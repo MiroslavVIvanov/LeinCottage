@@ -1,25 +1,27 @@
-﻿@model IQueryable<LeinCottage.Models.Photo>
+﻿@using LeinCottage.Resources
+
+@model IQueryable<LeinCottage.Models.Photo>
 
 @{
     ViewBag.Title = "Index";
 }
 
-<form method="post" enctype="multipart/form-data" style="border:1px solid black; padding: 15px; margin:5px">
-    <h3 style="font-family:'Azbuka'">Добавяне на снимка</h3>
+<form method="post" enctype="multipart/form-data" id="form">
+    <h3 style="font-family:'Azbuka'">@GlobalResources.UploadPhotos</h3>
 
-    <input type="button" value="Избери снимка/и" onclick="document.getElementById('file').click();" />
-    <input type="file" style="display:none;" id="file" name="uploadedPhotos" multiple/>
+    <input type="button" value="@GlobalResources.ChoosePhotos" onclick="document.getElementById('file').click();" />
+    <input type="file" style="display:none" id="file" name="uploadedPhotos" multiple/>
 
-    <input type="button" value="Добави избраните снимки" onclick="validateFileSelected()" />
-    <input type="submit" style="display:none;" id="submit" onclick="showInfoToast('Добавяне на снимки...')" />
+    <input type="button" value="@GlobalResources.AddSelectedPhotos" onclick="validateFileSelected()" />
+    <input type="submit" class="display-none" id="submit" onclick="showInfoToast(@GlobalResources.PhotoAdding)" />
 </form>
 
-<div style="border:1px solid black; padding: 15px; margin:5px">
-    <h3 style="font-family:'Azbuka'">Изтриване на снимки</h3>
-    <ul style="list-style-type:none; padding:0;">
+<div id="photos-wrapper">
+    <h3 style="font-family:'Azbuka'">@GlobalResources.DeletePhotos</h3>
+    <ul id="list-of-photos-to-delete">
         @foreach (LeinCottage.Models.Photo photo in Model)
         {
-            <li style="margin:2px; padding:1px; display:inline-block;" >
+            <li class="image-for-delition-li">
                 <div class="img-holder">
                     <img src="~/GalleryThumbnails/@photo.ThumbnailName" class="galery-thumbnail" />
                     <img src="~/Content/img/delete.png" id="@photo.Id" onclick="deleteImage(@photo.Id)" class="link"/>
