@@ -11,11 +11,7 @@
 
         public string Name { get; set; }
 
-        public string RelativePath { get; set; }
-
         public string ThumbnailName { get; set; }
-
-        public string ThumbnailRelativePath { get; set; }
 
         public bool IsVisible { get; set; }
     }

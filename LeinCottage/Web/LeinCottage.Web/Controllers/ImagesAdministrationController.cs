@@ -2,6 +2,7 @@
 {
     using Common;
     using CustomAttributes;
+    using Data;
     using Models;
     using System.Drawing;
     using System.IO;
@@ -43,6 +44,17 @@
                 ImageProcessor.SavePhotoThumbnail(file.InputStream, thumbPath);
 
                 //photo to database
+                var photos = new EfGenericRepository<Photo>(new LeinCottageDbContext());
+                var newPhoto = new Photo()
+                {
+                    IsVisible = true,
+                    Name = photoName,
+                    ThumbnailName = thumbName,
+                    OriginalName = originalName
+                };
+
+                photos.Add(newPhoto);
+                photos.SaveChanges();
             }
 
             return RedirectToAction("Index");
