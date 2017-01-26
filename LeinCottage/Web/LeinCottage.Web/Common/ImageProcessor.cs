@@ -48,5 +48,10 @@
                 bmp.Save(path);
             }
         }
+
+        public static void PhysicallyDeletePhoto(string path)
+        {
+            File.Delete(path);
+        }
     }
 }

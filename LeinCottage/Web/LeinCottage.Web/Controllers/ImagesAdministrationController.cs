@@ -69,8 +69,16 @@
         public void Delete(int id)
         {
             var photos = new EfGenericRepository<Photo>(new LeinCottageDbContext());
+            var path = Path.Combine(Server.MapPath("~"), "GalleryPhotos", photos.GetById(id).Name);
+            var thumbPath = Path.Combine(Server.MapPath("~"), "GalleryThumbnails", photos.GetById(id).Name);
+
+                ImageProcessor.PhysicallyDeletePhoto(path);
+                ImageProcessor.PhysicallyDeletePhoto(thumbPath);
+
+
             photos.Delete(id);
             photos.SaveChanges();
+
             //return RedirectToAction("Index");
         }
 
