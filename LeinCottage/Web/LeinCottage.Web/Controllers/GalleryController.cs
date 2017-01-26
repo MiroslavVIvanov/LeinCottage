@@ -1,9 +1,8 @@
 ﻿namespace LeinCottage.Web.Controllers
 {
+    using System.Web.Mvc;
     using LeinCottage.Data;
     using LeinCottage.Models;
-    using System.Linq;
-    using System.Web.Mvc;
 
     public class GalleryController : Controller
     {
@@ -12,7 +11,7 @@
         {
             EfGenericRepository<Photo> photos = new EfGenericRepository<Photo>(new LeinCottageDbContext());
             var allPhotos = photos.All();
-            return View(allPhotos);
+            return this.View(allPhotos);
         }
     }
 }

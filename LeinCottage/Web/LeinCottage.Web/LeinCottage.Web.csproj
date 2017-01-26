@@ -168,17 +168,6 @@
     <Content Include="Scripts\blueimp-helper.js" />
     <Content Include="Scripts\jquery.blueimp-gallery.js" />
     <Content Include="Scripts\jquery.blueimp-gallery.min.js" />
-    <Content Include="BlueImpGalleryControls\photos\img%281%29.jpg" />
-    <Content Include="BlueImpGalleryControls\photos\img%2810%29.jpg" />
-    <Content Include="BlueImpGalleryControls\photos\img%282%29.jpg" />
-    <Content Include="BlueImpGalleryControls\photos\img%283%29.jpg" />
-    <Content Include="BlueImpGalleryControls\photos\img%284%29.jpg" />
-    <Content Include="BlueImpGalleryControls\photos\img%285%29.jpg" />
-    <Content Include="BlueImpGalleryControls\photos\img%286%29.jpg" />
-    <Content Include="BlueImpGalleryControls\photos\img%287%29.jpg" />
-    <Content Include="BlueImpGalleryControls\photos\img%288%29.jpg" />
-    <Content Include="BlueImpGalleryControls\photos\img%289%29.jpg" />
-    <Content Include="BlueImpGalleryControls\photos\mainImage.jpg" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />

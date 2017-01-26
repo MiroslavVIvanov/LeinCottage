@@ -19,14 +19,13 @@
         [BasicAuthentication("", "")]
         public ActionResult Index()
         {
-            CheckIfDirectoryExist(PhotosDirectoryName);
-            CheckIfDirectoryExist(ThumbsDirectoryName);
+            this.CheckIfDirectoryExist(PhotosDirectoryName);
+            this.CheckIfDirectoryExist(ThumbsDirectoryName);
 
             var photos = new EfGenericRepository<Photo>(new LeinCottageDbContext());
             var allPhotos = photos.All().OrderByDescending(p => p.Id);
-
-
-            return View(allPhotos);
+            
+            return this.View(allPhotos);
         }
 
         [HttpPost]
@@ -41,7 +40,7 @@
                 {
                     if (file.ContentLength > 0)
                     {
-                        //names and paths
+                        // names and paths
                         string rootPath = Server.MapPath("~");
 
                         string originalName = file.FileName;
@@ -52,11 +51,11 @@
                         string thumbName = PhotoNameProvider.GetThumbnailName(file.FileName);
                         string thumbPath = Path.Combine(rootPath, ThumbsDirectoryName, thumbName);
 
-                        //image and resizing
+                        // image and resizing
                         ImageProcessor.SavePhoto(file.InputStream, photoPath);
                         ImageProcessor.SavePhotoThumbnail(file.InputStream, thumbPath);
 
-                        //photo to database
+                        // photo to database
                         var newPhoto = new Photo()
                         {
                             IsVisible = true,
@@ -72,7 +71,7 @@
                 photos.SaveChanges();
             }
 
-            return RedirectToAction("Index");
+            return this.RedirectToAction("Index");
         }
 
         [HttpPost]

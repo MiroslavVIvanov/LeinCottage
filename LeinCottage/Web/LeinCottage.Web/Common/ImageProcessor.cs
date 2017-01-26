@@ -19,8 +19,6 @@
         {
             using (var originalImage = Bitmap.FromStream(fileStream, true, true))
             {
-                //TODO: resize?????
-
                 float width = 200;
                 float height = 200;
                 var brush = new SolidBrush(Color.White);

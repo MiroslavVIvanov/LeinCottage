@@ -1,11 +1,12 @@
 ﻿namespace LeinCottage.Data
 {
-    using Models;
     using System.Data.Entity;
+    using Models;
+
     public class LeinCottageDbContext: DbContext
     {
         public LeinCottageDbContext()
-            : base("LeinCottageDataBase")
+            :base("LeinCottageDataBase")
         {
         }
 
