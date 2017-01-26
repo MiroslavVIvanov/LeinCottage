@@ -65,10 +65,9 @@
                         };
 
                         photos.Add(newPhoto);
+                        photos.SaveChanges();
                     }
                 }
-
-                photos.SaveChanges();
             }
 
             return this.RedirectToAction("Index");

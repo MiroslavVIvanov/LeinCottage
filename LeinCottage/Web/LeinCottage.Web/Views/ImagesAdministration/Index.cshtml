@@ -12,8 +12,8 @@
     <input type="button" value="@GlobalResources.ChoosePhotos" onclick="document.getElementById('file').click();" />
     <input type="file" style="display:none" id="file" name="uploadedPhotos" multiple/>
 
-    <input type="button" value="@GlobalResources.AddSelectedPhotos" onclick="validateFileSelected()" />
-    <input type="submit" class="display-none" id="submit" onclick="showInfoToast(@GlobalResources.PhotoAdding)" />
+    <input type="button" value="@GlobalResources.AddSelectedPhotos" onclick='validateFileSelected()' id="submit-btn-wrapper" />
+    <input type="submit" class="display-none" id="submit" onclick="showInfoToast('@GlobalResources.PhotoAdding')" />
 </form>
 
 <div id="photos-wrapper">
@@ -35,7 +35,8 @@
     function deleteImage(imageId) {
         toastr.options = {
             "closeButton": true,
-            "positionClass": "toast-top-full-width",
+            "positionClass": "toast-bottom-full-width",
+            "preventDuplicates": true,
         }
         toastr.error("<button type='button' id='confirmationRevertYes' class='btn clear'>Да</button>", 'Сигурни ли сте, че искате да изтриете снимката?',
           {
@@ -66,11 +67,14 @@
     }
 
     function validateFileSelected() {
+        document.getElementById('submit-btn-wrapper').disabled = true;
+
         if ($("#file").val()) {
             document.getElementById('submit').click();
         } else {
             toastr.options = {
                 "positionClass": "toast-top-full-width",
+                "preventDuplicates": true,
             }
             toastr.error("Не сте избрали снимка!", "Грешка!")
         }

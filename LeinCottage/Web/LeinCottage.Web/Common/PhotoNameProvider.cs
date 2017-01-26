@@ -26,13 +26,14 @@
             var now = DateTime.Now;
 
             return string.Format(
-                "{0}-{1}-{2}-{3}-{4}-{5}-photo",
+                "{0}-{1}-{2}-{3}-{4}-{5}-{6}-photo",
                 now.Year,
                 now.Month,
                 now.Day,
                 now.Hour,
                 now.Minute,
-                now.Second);
+                now.Second,
+                now.Millisecond);
         }
 
         private static string GetExtension(string originalName)
