@@ -1,2 +1,2 @@
 # LeinCottage
-A website project for Lein Cottage guesthouse
+A website project for Lein Cottage guesthouse.
