@@ -1,12 +1,49 @@
-﻿
+﻿@model IQueryable<LeinCottage.Models.Photo>
+
 @{
     ViewBag.Title = "Index";
 }
 
-<form action="" method="post" enctype="multipart/form-data">
+<form action="" method="post" enctype="multipart/form-data" style="border:1px solid black; padding: 15px; margin:5px">
 
     <label for="file">Filename:</label>
     <input type="file" name="file" id="file" accept="image/jpeg" />
 
     <input type="submit" />
 </form>
+
+<div style="border:1px solid black; padding: 15px; margin:5px">
+    <ul style="list-style-type:none">
+        @foreach (LeinCottage.Models.Photo photo in Model)
+        {
+            <li style="margin:0; padding:0">
+                <img src="~/GalleryThumbnails/@photo.ThumbnailName" class="galery-thumbnail" />
+                <button id="@photo.Id" onclick="deleteImage(@photo.Id)">Delete this image!</button>
+            </li>
+        }
+    </ul>
+</div>
+
+<script>
+    @*jQuery(function ($) {
+        $('#my-button').on('click', function () {
+            $.ajax({
+                url : '@Url.Action("Foo", "MyController")',
+                type : 'GET'
+            });
+        });
+    });*@
+
+    function deleteImage(imageId) {
+        $.ajax({
+            url: '@Url.Action("Delete", "ImagesAdministration")',
+            type: 'POST',
+            data: { 'id' : imageId },
+            async: false,
+            cache: false,
+            success:function(){
+                window.location = "@Url.Action("Index", "ImagesAdministration")";
+            }
+        });
+    }
+</script>

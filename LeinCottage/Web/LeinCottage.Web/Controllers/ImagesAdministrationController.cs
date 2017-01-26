@@ -5,9 +5,11 @@
     using Data;
     using Models;
     using System.IO;
+    using System.Linq;
     using System.Web;
     using System.Web.Mvc;
 
+    [NoCache]
     public class ImagesAdministrationController : Controller
     {
         private const string PhotosDirectoryName = "GalleryPhotos";
@@ -19,7 +21,11 @@
             CheckIfDirectoryExist(PhotosDirectoryName);
             CheckIfDirectoryExist(ThumbsDirectoryName);
 
-            return View();
+            var photos = new EfGenericRepository<Photo>(new LeinCottageDbContext());
+            var allPhotos = photos.All();
+
+
+            return View(allPhotos);
         }
 
         [HttpPost]
@@ -57,6 +63,15 @@
             }
 
             return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public void Delete(int id)
+        {
+            var photos = new EfGenericRepository<Photo>(new LeinCottageDbContext());
+            photos.Delete(id);
+            photos.SaveChanges();
+            //return RedirectToAction("Index");
         }
 
         private void CheckIfDirectoryExist(string directoryName)

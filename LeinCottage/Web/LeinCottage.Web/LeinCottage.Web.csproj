@@ -135,6 +135,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImagesAdministrationController.cs" />
     <Compile Include="CustomAttributes\BasicAuthenticationAttribute.cs" />
+    <Compile Include="CustomAttributes\NoCacheAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
