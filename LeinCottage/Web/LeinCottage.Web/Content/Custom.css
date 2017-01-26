@@ -94,3 +94,8 @@
     list-style-type: none;
     padding: 0;
 }
+
+.custom-btn{
+    min-width:100px;
+    margin:10px;
+}

@@ -10,9 +10,9 @@
     <h3 style="font-family:'Azbuka'">@GlobalResources.UploadPhotos</h3>
 
     <input type="button" value="@GlobalResources.ChoosePhotos" onclick="document.getElementById('file').click();" />
-    <input type="file" style="display:none" id="file" name="uploadedPhotos" multiple/>
+    <input type="file" style="display:none" id="file" name="uploadedPhotos" multiple onchange="displaySelectedPhotos()"/>
 
-    <input type="button" value="@GlobalResources.AddSelectedPhotos" onclick='validateFileSelected()' id="submit-btn-wrapper" />
+    <input type="button" value="@GlobalResources.AddSelectedPhotos" onclick='validateFileSelected()' id="submit-btn-wrapper" disabled="disabled" />
     <input type="submit" class="display-none" id="submit" onclick="showInfoToast('@GlobalResources.PhotoAdding')" />
 </form>
 
@@ -33,15 +33,12 @@
 
 <script>
     function deleteImage(imageId) {
-        toastr.options = {
-            "closeButton": true,
-            "positionClass": "toast-bottom-full-width",
-            "preventDuplicates": true,
-        }
-        toastr.error("<button type='button' id='confirmationRevertYes' class='btn clear'>Да</button>", 'Сигурни ли сте, че искате да изтриете снимката?',
+        toastr.clear();
+        toastr.error("<button type='button' id='confirmationRevertYes' class='btn clear custom-btn'>Да</button><button type='button' id='confirmationRevertNo' class='btn clear custom-btn'>Не</button>", 'Сигурни ли сте, че искате да изтриете снимката?',
           {
-              closeButton: false,
-              allowHtml: true,
+              closeButton: true,
+              positionClass: "toast-bottom-full-width",
+              preventDuplicates: true,
               onShown: function (toast) {
                   $("#confirmationRevertYes").click(function () {
                       $.ajax({
@@ -51,9 +48,13 @@
                           async: false,
                           cache: false,
                           success: function () {
+                              toastr.clear();
                               window.location = "@Url.Action("Index", "ImagesAdministration")";
                           }
                       });
+                  });
+                  $("#confirmationRevertNo").click(function () {
+                      toastr.clear();
                   });
               }
           });
@@ -77,6 +78,14 @@
                 "preventDuplicates": true,
             }
             toastr.error("Не сте избрали снимка!", "Грешка!")
+        }
+    }
+
+    function displaySelectedPhotos() {
+        var value = $('#file').val();
+
+        if (value) {
+            document.getElementById("submit-btn-wrapper").disabled = false;
         }
     }
 </script>
