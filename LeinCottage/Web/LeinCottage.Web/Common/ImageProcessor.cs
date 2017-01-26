@@ -21,8 +21,8 @@
             {
                 //TODO: resize?????
 
-                float width = 300;
-                float height = 300;
+                float width = 200;
+                float height = 200;
                 var brush = new SolidBrush(Color.White);
 
                 float scale = Math.Min(width / originalImage.Width, height / originalImage.Height);

@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IQueryable<LeinCottage.Models.Photo>
+
+@{
     ViewBag.Title = "Gallery";
 }
 
@@ -13,36 +15,12 @@
 </div>
 
 <div id="links">
-    <a href="~/BlueImpGalleryControls/photos/img(1).jpg" title="">
-        <img src="~/BlueImpGalleryControls/photos/img(1).jpg" style="margin:5px; max-width:200px; max-height:200px;" class="galery-thumbnail" />
-    </a>
-    <a href="~/BlueImpGalleryControls/photos/img(2).jpg" title="">
-        <img src="~/BlueImpGalleryControls/photos/img(2).jpg" style="margin:5px; max-width:200px; max-height:200px;" class="galery-thumbnail" />
-    </a>
-    <a href="~/BlueImpGalleryControls/photos/img(3).jpg" title="">
-        <img src="~/BlueImpGalleryControls/photos/img(3).jpg" style="margin:5px; max-width:200px; max-height:200px;" class="galery-thumbnail" />
-    </a>
-    <a href="~/BlueImpGalleryControls/photos/img(4).jpg" title="">
-        <img src="~/BlueImpGalleryControls/photos/img(4).jpg" style="margin:5px; max-width:200px; max-height:200px;" class="galery-thumbnail" />
-    </a>
-    <a href="~/BlueImpGalleryControls/photos/img(5).jpg" title="">
-        <img src="~/BlueImpGalleryControls/photos/img(5).jpg" style="margin:5px; max-width:200px; max-height:200px;" class="galery-thumbnail" />
-    </a>
-    <a href="~/BlueImpGalleryControls/photos/img(6).jpg" title="">
-        <img src="~/BlueImpGalleryControls/photos/img(6).jpg" style="margin:5px; max-width:200px; max-height:200px;" class="galery-thumbnail" />
-    </a>
-    <a href="~/BlueImpGalleryControls/photos/img(7).jpg" title="">
-        <img src="~/BlueImpGalleryControls/photos/img(7).jpg" style="margin:5px; max-width:200px; max-height:200px;" class="galery-thumbnail" />
-    </a>
-    <a href="~/BlueImpGalleryControls/photos/img(8).jpg" title="">
-        <img src="~/BlueImpGalleryControls/photos/img(8).jpg" style="margin:5px; max-width:200px; max-height:200px;" class="galery-thumbnail" />
-    </a>
-    <a href="~/BlueImpGalleryControls/photos/img(9).jpg" title="">
-        <img src="~/BlueImpGalleryControls/photos/img(9).jpg" style="margin:5px; max-width:200px; max-height:200px;" class="galery-thumbnail" />
-    </a>
-    <a href="~/BlueImpGalleryControls/photos/img(10).jpg" title="">
-        <img src="~/BlueImpGalleryControls/photos/img(10).jpg" style="margin:5px; max-width:200px; max-height:200px;" class="galery-thumbnail" />
-    </a>
+    @foreach (LeinCottage.Models.Photo photo in Model)
+    {
+        <a href="~/GalleryPhotos/@photo.Name" title="@photo.OriginalName">
+            <img src="~/GalleryThumbnails/@photo.ThumbnailName" class="galery-thumbnail" />
+        </a>
+    }
 </div>
 
 <script>
