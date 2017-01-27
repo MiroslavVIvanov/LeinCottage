@@ -3,13 +3,14 @@
     using System.Web.Mvc;
     using LeinCottage.Data;
     using LeinCottage.Models;
+    using LocalData;
 
     public class GalleryController : Controller
     {
         // GET: Gallery
         public ActionResult Index()
         {
-            EfGenericRepository<Photo> photos = new EfGenericRepository<Photo>(new LeinCottageDbContext());
+            var photos = JsonPhotoRepository<Photo>.Instance;
             var allPhotos = photos.All();
             return this.View(allPhotos);
         }

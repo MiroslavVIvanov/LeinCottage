@@ -9,6 +9,7 @@
     using CustomAttributes;
     using Data;
     using Models;
+    using LocalData;
 
     [NoCache]
     public class ImagesAdministrationController : Controller
@@ -22,7 +23,7 @@
             this.CheckIfDirectoryExist(PhotosDirectoryName);
             this.CheckIfDirectoryExist(ThumbsDirectoryName);
 
-            var photos = new EfGenericRepository<Photo>(new LeinCottageDbContext());
+            var photos = JsonPhotoRepository<Photo>.Instance;
             var allPhotos = photos.All().OrderByDescending(p => p.Id);
             
             return this.View(allPhotos);
@@ -34,8 +35,8 @@
             var a = uploadedPhotos;
             if (uploadedPhotos != null && uploadedPhotos.Count() > 0)
             {
-                var photos = new EfGenericRepository<Photo>(new LeinCottageDbContext());
-
+                //var photos = new EfGenericRepository<Photo>(new LeinCottageDbContext());
+                var photos = JsonPhotoRepository<Photo>.Instance;
                 foreach (var file in uploadedPhotos)
                 {
                     if (file.ContentLength > 0)
@@ -78,7 +79,7 @@
         {
             try
             {
-                var photos = new EfGenericRepository<Photo>(new LeinCottageDbContext());
+                var photos = JsonPhotoRepository<Photo>.Instance;
                 var path = Path.Combine(Server.MapPath("~"), "GalleryPhotos", photos.GetById(id).Name);
                 var thumbPath = Path.Combine(Server.MapPath("~"), "GalleryThumbnails", photos.GetById(id).ThumbnailName);
 
