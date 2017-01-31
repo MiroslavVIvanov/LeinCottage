@@ -248,5 +248,32 @@ namespace LeinCottage.Resources {
                 return ResourceManager.GetString("UploadPhotos", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Възникна грешка при добавянето на снимки!.
+        /// </summary>
+        public static string UploadPhotosError {
+            get {
+                return ResourceManager.GetString("UploadPhotosError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Моля, уверете се, че сте избрали изображения и опитайте отново..
+        /// </summary>
+        public static string UploadPhotosErrorAdvice {
+            get {
+                return ResourceManager.GetString("UploadPhotosErrorAdvice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Връщане в администрацията.
+        /// </summary>
+        public static string UploadPhotosErrorGoBack {
+            get {
+                return ResourceManager.GetString("UploadPhotosErrorGoBack", resourceCulture);
+            }
+        }
     }
 }

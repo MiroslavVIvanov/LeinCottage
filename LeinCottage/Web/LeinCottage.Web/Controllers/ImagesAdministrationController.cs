@@ -7,9 +7,9 @@
     using System.Web.Mvc;
     using Common;
     using CustomAttributes;
-    using Data;
     using Models;
     using LocalData;
+    using Exceptions;
 
     [NoCache]
     public class ImagesAdministrationController : Controller
@@ -25,8 +25,13 @@
 
             var photos = JsonPhotoRepository<Photo>.Instance;
             var allPhotos = photos.All().OrderByDescending(p => p.Id);
-            
+
             return this.View(allPhotos);
+        }
+
+        public ActionResult PhotoUploadError()
+        {
+            return this.View();
         }
 
         [HttpPost]
@@ -53,8 +58,15 @@
                         string thumbPath = Path.Combine(rootPath, ThumbsDirectoryName, thumbName);
 
                         // image and resizing
-                        ImageProcessor.SavePhoto(file.InputStream, photoPath);
-                        ImageProcessor.SavePhotoThumbnail(file.InputStream, thumbPath);
+                        try
+                        {
+                            ImageProcessor.SavePhoto(file.InputStream, photoPath);
+                            ImageProcessor.SavePhotoThumbnail(file.InputStream, thumbPath);
+                        }
+                        catch (FileNotPhotoException ex)
+                        {
+                            return View("PhotoUploadError");
+                        }
 
                         // photo to database
                         var newPhoto = new Photo()

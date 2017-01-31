@@ -18,7 +18,8 @@
                     controller = "Home",
                     action = "Index",
                     id = UrlParameter.Optional
-                });
+                },
+                namespaces: new string[] { "LeinCottage.Web.Controllers" });
         }
     }
 }

@@ -1,0 +1,12 @@
+﻿@using LeinCottage.Resources
+
+@{
+    ViewBag.Title = "PhotoUploadError";
+}
+
+<h3 style="font-family:Azbuka">Грешка!</h3>
+
+<p>@GlobalResources.UploadPhotosError</p>
+<p>@GlobalResources.UploadPhotosErrorAdvice</p>
+
+@Html.ActionLink(@GlobalResources.UploadPhotosErrorGoBack, "Index", "ImagesAdministration")

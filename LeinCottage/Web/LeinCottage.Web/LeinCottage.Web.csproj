@@ -137,6 +137,7 @@
     <Compile Include="Controllers\ImagesAdministrationController.cs" />
     <Compile Include="CustomAttributes\BasicAuthenticationAttribute.cs" />
     <Compile Include="CustomAttributes\NoCacheAttribute.cs" />
+    <Compile Include="Exceptions\FileNotPhotoException.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -184,6 +185,8 @@
     <Content Include="Content\toastr.scss" />
     <Content Include="Content\toastr.less" />
     <Content Include="App_Data\LocalJsonStorage.json" />
+    <None Include="Properties\PublishProfiles\leincottage - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\leincottage - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -207,16 +210,17 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Contacts\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Gallery\Index.cshtml" />
     <Content Include="Views\ImagesAdministration\Index.cshtml" />
     <Content Include="Scripts\toastr.min.js.map" />
+    <Content Include="Views\ImagesAdministration\PhotoUploadError.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
+    <Folder Include="Views\Error\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

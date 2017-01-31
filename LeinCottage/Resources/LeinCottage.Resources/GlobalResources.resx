@@ -180,4 +180,13 @@
   <data name="UploadPhotos" xml:space="preserve">
     <value>Добавяне на снимки</value>
   </data>
+  <data name="UploadPhotosError" xml:space="preserve">
+    <value>Възникна грешка при добавянето на снимки!</value>
+  </data>
+  <data name="UploadPhotosErrorAdvice" xml:space="preserve">
+    <value>Моля, уверете се, че сте избрали изображения и опитайте отново.</value>
+  </data>
+  <data name="UploadPhotosErrorGoBack" xml:space="preserve">
+    <value>Връщане в администрацията</value>
+  </data>
 </root>

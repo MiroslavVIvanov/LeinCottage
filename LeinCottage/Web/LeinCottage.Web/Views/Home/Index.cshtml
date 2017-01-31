@@ -1,4 +1,6 @@
-﻿@{
+﻿@using LeinCottage.Resources
+
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -9,21 +11,17 @@
 <div class="row">
     <div class="col-md-4 homepage-info-column">
         <p class="justified">
-            Къща за гости Леин Котич предлага отлични условия за вашата почивка, семинар, кръщене и др.
-            Къщата е на 3 етажа, разполага с 5 стаи, 1 апартамент и 1 студио за 4 човека. Общият капацитет е 20 гости.
+            @GlobalResources.FirstHomePageInfo
         </p>
     </div>
     <div class="col-md-4 homepage-info-column">
         <p class="justified">
-            Стаите са уютно обзаведени с мека мебел, всички са със самостоятелни бани и повечето са климатизирани.
-            Разполагат с кабелна телевизия и безплатен интернет.
-            Гостите могат да ползват и напълно оборудвана трапезария с кухня, а през лятото да се хранят на верандата на открито.
+            @GlobalResources.SecondHomePageInfo
         </p>
     </div>
     <div class="col-md-4 homepage-info-column">
         <p class="justified">
-            На разположение на гостите е голям двор с открит басейн със шезлонги, детски кът и паркинг.
-            Има волейболно игрище и джага.
+            @GlobalResources.ThirdHomePageInfo
         </p>
     </div>
 </div>
