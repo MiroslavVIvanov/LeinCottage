@@ -17,7 +17,7 @@
 <div id="links">
     @foreach (LeinCottage.Models.Photo photo in Model)
     {
-        <a href="~/GalleryPhotos/@photo.Name" title="@photo.OriginalName">
+        <a href="~/GalleryPhotos/@photo.Name">
             <img src="~/GalleryThumbnails/@photo.ThumbnailName" class="galery-thumbnail" />
         </a>
     }
