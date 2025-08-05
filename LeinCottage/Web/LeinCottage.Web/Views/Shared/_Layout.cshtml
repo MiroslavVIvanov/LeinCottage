@@ -26,13 +26,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink(GlobalResources.ApplicationName, "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink(GlobalResources.ApplicationName, "Index", "Home", new { area = "" }, new { @class = "navbar-brand", style = "color: black !important" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink(GlobalResources.HomeBtn, "Index", "Home")</li>
-                    <li>@Html.ActionLink(GlobalResources.GalleryBtn, "Index", "Gallery")</li>
-                    <li>@Html.ActionLink(GlobalResources.ContactsBtn, "Index", "Contacts")</li>
+                <ul class="nav navbar-nav" style="color: black">
+                    <li><a style="color:black !important" href="/">Начало</a></li>
+                    <li><a style="color:black !important" href="/bg/Gallery">Галерия</a></li>
+                    <li><a style="color:black !important" href="/bg/Contacts">Контакти</a></li>
                 </ul>
             </div>
         </div>
